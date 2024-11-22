@@ -22,7 +22,7 @@ RUN apt-get update -qq && \
 
 # Install node modules
 COPY package.json ./
-RUN yarn install
+RUN npm install
 
 # Copy application code
 COPY . .
@@ -35,5 +35,5 @@ FROM base
 COPY --from=build /app /app
 
 # Start the server by default, this can be overwritten at runtime
-EXPOSE 4710
+EXPOSE 3000
 CMD [ "node", "src/index.js" ]
