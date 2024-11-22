@@ -7,7 +7,7 @@ const fs = require("fs");
 const csv = require("csv-parser");
 
 const CORS = [
-  "http://localhost:4710",
+  "http://localhost:3000",
   "http://appbuild.canlab.co:4711",
   "https://11plus.vingle.network",
   "https://admin.socket.io",
