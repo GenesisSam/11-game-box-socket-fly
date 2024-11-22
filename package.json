@@ -1,0 +1,29 @@
+{
+  "name": "11-bet",
+  "version": "0.0.0",
+  "main": "src/index.js",
+  "author": "GenesisSam",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": "=18.18.2"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "admin": "node ./test/admin.js",
+    "playground": "node test/playground.js"
+  },
+  "dependencies": {
+    "@socket.io/admin-ui": "^0.5.1",
+    "cors": "^2.8.5",
+    "csv-parser": "^3.0.0",
+    "csv-writer": "^1.6.0",
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2",
+    "socket.io-client": "^4.7.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
