@@ -1,40 +1,22 @@
-# fly.toml app configuration file generated for 11-game-box on 2024-11-22T12:15:14Z
+# fly.toml app configuration file generated for 11-game-box-socket-fly-broken-resonance-2694 on 2024-11-22T22:22:26+09:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = '11-game-box-socket-fly'
+app = '11-game-box-socket-fly-broken-resonance-2694'
 primary_region = 'nrt'
-
-primary_region = "nrt"  # 도쿄 리전 (가장 가까운 리전 선택)
 
 [build]
 
-[env]
-  PORT = "3000"
-
 [http_service]
-  internal_port = 3000
+  internal_port = 4710
   force_https = true
   auto_stop_machines = 'stop'
   auto_start_machines = true
   min_machines_running = 0
-  processes = ["app"]
-
-[[services]]
-  protocol = "tcp"
-  internal_port = 3000
-
-  [[services.ports]]
-    port = 80
-    handlers = ["http"]
-
-  [[services.ports]]
-    port = 443
-    handlers = ["tls", "http"]
+  processes = ['app']
 
 [[vm]]
   memory = '1gb'
   cpu_kind = 'shared'
   cpus = 1
-  memory_mb = 1024

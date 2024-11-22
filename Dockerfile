@@ -21,8 +21,8 @@ RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y build-essential node-gyp pkg-config python-is-python3
 
 # Install node modules
-COPY package.json ./
-RUN npm install
+COPY package-lock.json package.json ./
+RUN npm ci
 
 # Copy application code
 COPY . .
@@ -36,4 +36,4 @@ COPY --from=build /app /app
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
-CMD [ "node", "src/index.js" ]
+CMD [ "npm", "run", "start" ]
